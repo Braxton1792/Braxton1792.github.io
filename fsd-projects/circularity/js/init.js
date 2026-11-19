@@ -9,7 +9,6 @@ var init = function (window) {
         view = app.view,
         fps = draw.fps('#000');
         
-    
     window.opspark.makeGame = function() {
         
         window.opspark.game = {};
@@ -27,17 +26,21 @@ var circles = [];
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, " #999", 2);
             physikz.addRandomVelocity(circle, canvas, 5, 5,)
+            view.addChild(circle);
+            circles.push(circle);
         }
 
-
         // TODO 3 : Call the drawCircle() function
-
-
-
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+        drawCircle();
+       
         // TODO 7 : Use a loop to create multiple circles
-
-
-
+        for (var i = 0; i < 50; i++) {
+            drawCircle();
+        }
 
         ///////////////////
         // PROGRAM LOGIC //
